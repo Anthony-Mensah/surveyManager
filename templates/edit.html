@@ -1,0 +1,17 @@
+
+{% extends 'main.html' %}
+{% block content %}
+<h1 id="create">Create Survey Page</h1>
+
+<form class="" action="" method="POST">
+  {% csrf_token %}}
+  {% for field in survey_form %}
+  {{field.label}}
+  {{field}}
+  <b></b>
+  {% endfor %}
+  <input type="hidden" name="user" value="{{request.user.id}}">
+  <input type="submit" name="" value="Submit Question">
+</form>
+
+{% endblock content %}

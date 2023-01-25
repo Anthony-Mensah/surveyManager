@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>ENTER CHOICES</h1>
+<form class="" action="" method="POST">
+  {% csrf_token %}
+  <label for="choice">Enter choice</label>
+  <input type="text" name="choice" value="">
+  <input type="submit" name="" value="Add Choice">
+</form>
+
+<a href="/">DONE</a>
+{% endblock content %}

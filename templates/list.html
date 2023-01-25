@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>This is the survey list page</h1>
+<a href="{% url 'base:create' %}">Create survey</a>
+
+{% for survey in surveys %}
+<h2>{{survey.name}}</h2>
+<p>{{survey.question}}</p>
+<a href="{{survey.get_absolute_url}}">Answer Question</a>
+<a href="{% url 'base:edit' survey.slug %}">Edit</a>
+{% endfor %}
+{% endblock content %}

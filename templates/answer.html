@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>This is the answer page</h1>
+{{survey.question}}
+<!-- QUESTION FORM -->
+<form class="" action="" method="POST">
+  {% csrf_token %}
+  {% if survey.answer_type == 'choice' %}
+  <select class="" name="answer">
+    {% for choice in choices %}
+    <option value="{{choice}}">{{choice}}</option>
+    {% endfor %}
+  </select>
+
+  {% else %}
+    <input type="{{survey.answer_type}}" name="answer" value="" placeholder="">
+    <h2>{{survey.answer_type}}</h2>
+  {% endif %}
+
+
+  <input type="submit" name="" value="Submit Answer">
+</form>
+<!-- <input type="{{question.answer_type}}" name="" value=""> -->
+
+{% endblock content %}

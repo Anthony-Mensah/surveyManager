@@ -1,0 +1,39 @@
+
+{% extends 'main.html' %}
+{% block content %}
+<h1 id="create">Create Survey Page</h1>
+
+<form class="" action="" method="POST">
+  {% csrf_token %}}
+  {% for field in survey_form %}
+  {{field.label}}
+  {{field}}
+  <b></b>
+  {% endfor %}
+  <input type="submit" name="" value="Submit Question">
+</form>
+<!--
+<form class="" action="" method="POST">
+  {% csrf_token %}}
+  <label for="name">Name</label>
+  <input type="text" name="name" value="">
+
+  <label for="question">Question</label>
+  <input type="text" name="question" value="">
+
+  <label for="answer_type">Answer Type</label>
+  <select name="answer_type">
+    {% for type in survey_form.answer_type %}
+    <option value="{{type}}"></option>
+    {% endfor %}
+  </select>
+
+  <input type="submit" name="" value="Submit Question">
+</form> -->
+
+<script>
+  console.log("Jquery is working")
+
+
+</script>
+{% endblock content %}
